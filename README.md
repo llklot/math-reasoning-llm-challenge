@@ -12,7 +12,15 @@
 
 ## 🗂 데이터
 
-- TODO: 데이터 출처, 구성(train/leaderboard), 전처리 방식 설명
+| 파일 | 행 수 | 컬럼 | 설명 |
+|---|---|---|---|
+| `data/deep_chal_math_train.csv` | 25,840 | `id, question, answer` | 학습용. 정답 포함 |
+| `data/deep_chal_math_leaderboard.csv` | 1,739 | `id, question` | 평가용. 정답 미포함(제출 후 채점) |
+
+- **문제 유형**: 대수/방정식 응용문제, 비율·확률 계산 등 텍스트로 서술된 수학 문제
+  (예: *"What is the molecular weight of..."*, *"Two of the roots of the cubic equation..."*)
+- **출처**: TODO — 챌린지 주최 측 제공 데이터인지, 공개 데이터셋(GSM8K 등) 기반인지 명시
+- **전처리**: TODO — 토크나이징/프롬프트 포맷(예: instruction 템플릿), 필터링 여부 등
 
 ## 🔧 접근 방법
 
