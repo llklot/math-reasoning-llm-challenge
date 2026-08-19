@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Model checkpoints / large artifacts (용량 큰 파일은 git에 올리지 않고
+# Hugging Face Hub 등에 올린 뒤 README에 링크로 남기는 걸 추천)
+models/*
+!models/.gitkeep
+*.pt
+*.bin
+*.safetensors
+
+# 실험 로그/캐시
+wandb/
+outputs/*
+!outputs/.gitkeep
+
+# 환경변수 / 시크릿
+.env
