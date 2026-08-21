@@ -1,48 +1,38 @@
 # 아주소중한딥러닝챌린지
 
-> TODO: 한 줄 소개 — 예) 범용 LLM(Qwen2.5-3B-Instruct 등)을 수학 문제 풀이에 특화된 모델로
-> 파인튜닝하는 대학생 딥러닝 챌린지 프로젝트입니다.
+> 범용 LLM(Qwen2.5-3B-Instruct 등)을 수학 문제 풀이에 특화된 모델로 파인튜닝하는 딥러닝 챌린지 프로젝트입니다.
 
 ## 📌 프로젝트 개요
 
-- **목표**: TODO
-- **기간**: TODO
-- **참여**: TODO (개인 / 팀명)
-- **베이스 모델**: TODO (예: Qwen2.5-3B-Instruct)
+- **목표**: 수학에 특화되지 않은 하나의 범용 모델을 출발점으로, 다양한 기법을 활용하여 처음 보는 수학 문제를 정확히 풀 수 있는 추론 능력을 갖춘 모델로 발전시킵니다.
+- **기간**: 2026.08.01 - 2026.08.031
+- **참여**: 개인
+- **베이스 모델**: Qwen2.5-3B-Instruct (HuggingFace)
 
 ## 🗂 데이터
 
-| 파일 | 행 수 | 컬럼 | 설명 |
+| 파일 | 역할 | 컬럼 | 비고 |
 |---|---|---|---|
-| `data/deep_chal_math_train.csv` | 25,840 | `id, question, answer` | 학습용. 정답 포함 |
-| `data/deep_chal_math_leaderboard.csv` | 1,739 | `id, question` | 평가용. 정답 미포함(제출 후 채점) |
+| `data/deep_chal_math_train.csv` | 학습용 | `id, question, answer` | 학습에 사용. `train_filtered_ids.csv`의 id는 별도로 필터링 필요 |
+| `data/train_filtered_ids.csv` | 필터링용 | `id` | 오류가 확인된 학습 데이터 id 목록. 학습 파이프라인에서 로드 후 제외 처리 |
+| ~~`data/deep_chal_math_leaderboard.csv`~~ | (사용 중단) | `id, question` | 2026-08-03 14:00부로 아래 filtered 버전으로 대체됨. 기록용으로만 보관 |
+| `data/deep_chal_math_leaderboard_filtered.csv` | 실시간 리더보드 평가용 | `id, question` | **2026-08-03 14:00~ 현재 이 파일 기준으로 제출.** answer 필드 없음 |
+| `data/deep_chal_math_test.csv` | 최종 순위 평가용 | `id, question` | **2026-08-31 00:00 공개.** 제출 마감: 2026-08-31 23:59 (24시간 내 제출 필수) |
 
 - **문제 유형**: 대수/방정식 응용문제, 비율·확률 계산 등 텍스트로 서술된 수학 문제
-  (예: *"What is the molecular weight of..."*, *"Two of the roots of the cubic equation..."*)
-- **출처**: TODO — 챌린지 주최 측 제공 데이터인지, 공개 데이터셋(GSM8K 등) 기반인지 명시
-- **전처리**: TODO — 토크나이징/프롬프트 포맷(예: instruction 템플릿), 필터링 여부 등
+- **출처**: 챌린지 주최 측 제공 데이터, 공개 데이터셋 추가 사용 가능
+- **전처리**: 미정
 
 ## 🔧 접근 방법
 
-- TODO: 파인튜닝 기법 (Full FT / LoRA / QLoRA 등), 학습 설정, 사용한 프레임워크
 
 ## 📊 결과
 
-- TODO: 정량 결과 (스코어/정확도), 베이스라인 대비 개선 폭, 표/그래프
-
 ## 🚀 실행 방법
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-python src/test.py
-```
 
 ## 🧠 회고
 
-- TODO: 시행착오, 배운 점, 아쉬운 점
 
 ## 📁 구조
 
